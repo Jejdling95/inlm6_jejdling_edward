@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+body {
+  background-color: #090A0E;
+  color: white;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2em;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.max-center {
+  max-width: 1400px;
+  margin: 0 auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.search-div{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  gap: 30px;
+  
+}
+.search-form {
+  width: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0.8rem 1rem;
+  border-radius: 3rem;
+  background: #1f2123;
+}
+.search-form input {
+  flex: 1;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-right: 1rem;
+  outline: none;
+  color: #a1a1a1;
+  background: #1f2123;
+}
+.search-form button {
+  background-color: transparent;
+  padding: 0.2rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
   color: white;
+  border-color: #ff9900b1;
+}
+.search-form button:hover {
+  background-color: #ff9900b1;
+  transition: 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+.hero {
+  position: relative;
+  min-height: 450px;
+  background-position: top center;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.hero-content {
+  max-width: 70%;
+  padding-bottom: 30px;
+}
+.hero-title {
+  font-size: 72px;
+  margin: 0;
+}
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+.button {
+  background-color: #1f21238e;
+  color: white;
+  border-radius: 5px;
+  border: 3px solid rgba(205, 99, 0, 0.614);
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.button:hover {
+  background-color: rgba(205, 99, 0, 0.614);
+  border-color: white;
+  transition: 0.5s;
+}
+.button--close {
+  position: absolute;
+  z-index: 10;
+  bottom: -60px;
+  left: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.youtube-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; 
 }
+
+.movie-card {
+  width: 270px;
+  height: 460px;
+  margin: 1.5rem;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie-card div:nth-of-type(1) {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  color: #f9d3b4;
+}
+
+.movie-card:hover{
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.movie-card .title-div { 
+  background-color: rgba(73, 73, 73, 0.8);
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+} 
+  .movie-card:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.3;
+}  
