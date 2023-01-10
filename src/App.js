@@ -57,7 +57,7 @@ function App() {
         console.log(error);
         setMovies(movies); //setMovies till tidigare movies för att undvika krash
         setSelectedMovie(selectedMovie); // Samma som ovan
-        alert("ERROR");
+        alert("No movies where found");
       });
   };
 
