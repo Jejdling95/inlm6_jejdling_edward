@@ -47,12 +47,18 @@ function App() {
    * Hämtar alla filmer som matchar mot searchKey
    */
   const fetchMovies = async (searchKey) => {
-    const response = await fetch(
-      `https://www.omdbapi.com?apikey=5f335913&s=${searchKey}`
-    ); //notera att det inte är vanliga "fnuttar" utan "``". ${title}
-    const data = await response.json();
-    setMovies(data.Search);
-    selectMovie(data.Search[0]);
+    await fetch(`https://www.omdbapi.com?apikey=5f335913&s=${searchKey}`)
+      .then(async (response) => {
+        const data = await response.json();
+        setMovies(data.Search);
+        selectMovie(data.Search[0]);
+      })
+      .catch((error) => {
+        console.log(error);
+        setMovies(movies); //setMovies till tidigare movies för att undvika krash
+        setSelectedMovie(selectedMovie); // Samma som ovan
+        alert("ERROR");
+      });
   };
 
   /**
